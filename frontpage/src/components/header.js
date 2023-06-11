@@ -9,9 +9,8 @@ function Header() {
             <span class="title-text">Fake News Detection</span>
         </a>
         
-        <a href="#about">About us</a>
-        <a href="#help">Help</a>
-        <a href="#home">Home</a>
+        <a href="/about">About us</a>
+        <a href="/home">Home</a>
     </div>
   );
 }

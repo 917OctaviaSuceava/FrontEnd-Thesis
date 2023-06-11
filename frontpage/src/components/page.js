@@ -2,12 +2,12 @@ import React from 'react';
 import './Page.css';
 import TextInput from './textInput';
 import Header from './header';
-
+import TableML from './TableML';
 
 function Page() {
   return (
     <div class="page">
-        <Header/>
+        
         <div class="intro">
             <div class="text">
                 <h1 style={{fontWeight: 500}}>Separate Fact from Fiction!</h1>
@@ -21,6 +21,13 @@ function Page() {
                             src={require('./loupe.png')}/></a>
             </div>
         </div>
+        <div class="nextpage">
+        <h2 class="par">Below you can test your article to see how likely it is to be fake news or not. <br/> Simply input the 
+        title, the author and the content of the news. <br></br>If you do not know the title or the author, you can only input the text
+        and the algorithm will only work on that.</h2>
+        
+        <TableML/>
+    </div>
         
     </div>
   );

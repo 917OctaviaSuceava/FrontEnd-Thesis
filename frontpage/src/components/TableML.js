@@ -28,7 +28,7 @@ function TableML() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData), // Pass formData as the request payload
+      body: JSON.stringify(formData), 
     })
       .then((response) => response.json())
       .then((data) => {
@@ -59,6 +59,23 @@ function TableML() {
     fetchAccuracies();
   };
 
+  const getPrediction = () => {
+    if (text.trim() === '') {
+    return '';
+    } else {
+      const totalAccuracy =
+      accuracies.lr_accuracy_3 +
+      accuracies.dt_accuracy_3 +
+      accuracies.pa_accuracy_3 +
+      accuracies.lr_accuracy_2 +
+      accuracies.dt_accuracy_2 +
+      accuracies.pa_accuracy_2 +
+      accuracies.lr_accuracy_1 +
+      accuracies.dt_accuracy_1 +
+      accuracies.pa_accuracy_1;
+      return totalAccuracy >= 5 ? 'FAKE' : 'REAL';
+    }}
+
   return (
     <div className="container">
       <div className="form-container">
@@ -67,14 +84,7 @@ function TableML() {
         <textarea className="input-text" placeholder="Text" value={text} onChange={handleTextChange} />
         {/* <button className="submit-button" onClick={handleSubmit}>Submit</button>*/} 
       </div>
-      <p>
-        The prediction is:{' '}
-        {accuracies.lr_accuracy_3 + accuracies.dt_accuracy_3 + accuracies.pa_accuracy_3 +
-            accuracies.lr_accuracy_2 + accuracies.dt_accuracy_2 + accuracies.pa_accuracy_2 +
-            accuracies.lr_accuracy_1 + accuracies.dt_accuracy_1 + accuracies.pa_accuracy_1 >= 5
-            ? 'FAKE'
-            : 'REAL'}
-      </p>
+      <p>The prediction is: {getPrediction()}</p>
       <div className="table-container">
         <table className="table">
           <thead>

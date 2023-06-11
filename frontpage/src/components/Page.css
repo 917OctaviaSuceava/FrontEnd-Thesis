@@ -1,24 +1,43 @@
 .page {
     font-family: 'Candara', 'Calibri', sans-serif;
     color: rgb(77, 102, 83);
-    background-color: rgb(237, 245, 225);
-    /*position: absolute;
+    background: rgba(237,245,225,1);
+    /*
+    background: linear-gradient(180deg, rgba(142,228,175,1) 35%, rgba(237,245,225,1) 100%);
+    position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;*/
 }
+
+.nextpage {
+  color: rgb(77, 102, 83);
+  /*background-color: rgb(237, 245, 225);*/
+  background: rgba(237,245,225,1);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .intro {
     display: flex;
     padding: 50px;
     align-items: center; /* Align items vertically in the center */
   }
   
-  .title_par {
+.title_par {
     font-size: larger;
   }
 
-  .text {
+.par {
+    text-align: justify;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+
+.text {
     margin-right: 20px; /* Adjust the margin as needed */
   }
 
