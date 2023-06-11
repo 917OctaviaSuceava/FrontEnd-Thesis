@@ -1,19 +1,40 @@
 .topnav {
     background-color: rgb(142, 228, 175);
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
   }
   
-  /* Style the links inside the navigation bar */
+  .logo {
+    width: 35px;
+    height: 35px; /* Adjust the height as needed */
+    margin-right: 5px; /* Add margin to create space between the logo and text */
+  }
+
+  .title {
+    order: -1;
+    margin-right: auto; /* Add margin to push the other links to the right */
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+  }
+
+  .title-text {
+    font-weight: bold;
+    font-size: large;
+  }
+  
   .topnav a {
-    float: right;
     color: #505e52;
     text-align: center;
-    padding: 14px 16px;
+    
+    padding: 20px 10px; /* Adjust the padding to control the spacing */
     text-decoration: none;
     font-size: 17px;
   }
   
-  /* Change the color of links on hover */
   .topnav a:hover {
     background-color: rgb(55, 150, 131);
     color: black;
